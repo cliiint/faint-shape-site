@@ -1,13 +1,25 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const IndexPage = () => {
-  // TODO: create a specific page and query for home
+  const query = useStaticQuery(graphql`
+    query {
+      contentfulPage(slug: {eq: "home"}) {
+        content {
+          raw
+        }
+        slug
+      }
+    }
+  `);
+
+  const home = query.contentfulPage;
 
   return (
-    <Layout pageTitle="Home Page">
-      <p>Home page</p>
-    </Layout>
+    <div>
+      <h1>home page</h1>
+    </div>
   )
 }
 

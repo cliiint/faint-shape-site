@@ -1,5 +1,5 @@
-import * as React from "react"
-import { graphql } from "gatsby"
+import * as React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
