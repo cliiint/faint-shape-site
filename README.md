@@ -11,3 +11,8 @@ From root directory, run the following command
 ```bash
 npm i && npm run develop
 ```
+
+## TODO
+* hero & home page
+* footer
+* stylez
