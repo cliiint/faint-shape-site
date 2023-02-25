@@ -1,13 +1,11 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import ShowDetailView from "../../views/show-detail"
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import ShowDetail from '../../components/show-detail/show-detail'
 
 function Show(props) {
   const { contentfulShow } = props.data;
 
-  console.log(contentfulShow)
-
-  return <ShowDetailView show={contentfulShow} />
+  return <ShowDetail show={contentfulShow} />
 }
 
 export default Show
@@ -21,3 +19,8 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = (props) => {
+  const { title } = props.data.contentfulShow;
+  return <title>{title} | Faint Shape</title>
+}

@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
+import { Link } from 'gatsby'
 
-function ShowDetailView({ show }) {
+function ShowDetail({ show }) {
   return (
     <div>
       <header>
@@ -13,4 +13,4 @@ function ShowDetailView({ show }) {
   )
 }
 
-export default ShowDetailView
+export default ShowDetail

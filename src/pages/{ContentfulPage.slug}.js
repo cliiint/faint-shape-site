@@ -1,6 +1,6 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import Layout from '../components/layout'
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout/layout'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 function Page(props) {
@@ -27,4 +27,7 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <title>Music</title>
+export const Head = (props) => {
+  const { title } = props.data.contentfulPage;
+  return <title>{title} | Faint Shape</title>
+}

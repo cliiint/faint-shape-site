@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { title, container } from './layout.module.css'
-import Navigation from './navigation'
+import Navigation from '../navigation/navigation'
 
 const Layout = ({ pageTitle, children }) => {
   return (

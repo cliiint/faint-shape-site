@@ -1,15 +1,14 @@
 import * as React from 'react'
+import Home from '../components/home/home'
 
 const IndexPage = () => {
-  return (
-    <h1>Home page</h1>
-  )
+  return <Home/>
 }
 
 export const Head = () => {
   return (
     <>
-      <title>Home Page</title>
+      <title>Home | Faint Shape</title>
     </>
   )
 }
