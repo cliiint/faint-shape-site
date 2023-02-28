@@ -1,5 +1,8 @@
 import * as React from 'react'
+import Layout from '../layout/layout'
+import Hero from '../hero/hero'
 import { useStaticQuery, graphql } from 'gatsby'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 const Home = () => {
   const query = useStaticQuery(graphql`
@@ -16,7 +19,9 @@ const Home = () => {
   const home = query.contentfulPage;
 
   return (
-    <div>home component</div>
+    <Layout hero={<Hero/>}>
+      <div>{renderRichText(home.content)}</div>
+    </Layout>
   )
 }
 

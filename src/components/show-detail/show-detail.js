@@ -1,15 +1,12 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Layout from '../layout/layout'
 
 function ShowDetail({ show }) {
   return (
-    <div>
-      <header>
-        <Link to="/">Go back to "Home"</Link>
-      </header>
+    <Layout>
       <h1>{show.title}</h1>
       <div>welcome to show view</div>
-    </div>
+    </Layout>
   )
 }
 

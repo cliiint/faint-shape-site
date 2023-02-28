@@ -1,11 +1,30 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 .title {
   color: blue;
 }
 
 .container {
-  margin: auto;
+  margin: 0 auto;
   max-width: 500px;
   font-family: sans-serif;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .heading {
