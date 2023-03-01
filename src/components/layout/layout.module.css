@@ -14,10 +14,6 @@ body {
   box-sizing: inherit;
 }
 
-.title {
-  color: blue;
-}
-
 .container {
   font-family: sans-serif;
   height: 100%;

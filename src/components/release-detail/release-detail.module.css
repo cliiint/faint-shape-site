@@ -1,0 +1,23 @@
+.cover-player {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-player img {
+  max-width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .cover-player {
+    flex-direction: row;
+  }
+
+  .cover-player img {
+    max-width: 360px;
+    margin-right: 1rem;
+  }
+}

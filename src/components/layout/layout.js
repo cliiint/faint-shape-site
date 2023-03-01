@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { title, container, col } from './layout.module.css'
+import { container, col } from './layout.module.css'
 import Navigation from '../navigation/navigation'
 import Footer from '../footer/footer'
 
@@ -9,7 +9,7 @@ const Layout = ({ pageTitle, children, hero = null }) => {
       <div className={ col }>
         <Navigation>{hero}</Navigation>
         <main>
-          <h1 className={ title }>{pageTitle}</h1>
+          <h1>{pageTitle}</h1>
           {children}
         </main>
         <Footer/>

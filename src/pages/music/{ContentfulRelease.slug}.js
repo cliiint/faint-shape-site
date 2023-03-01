@@ -25,6 +25,14 @@ export const query = graphql`
           fileName
         }
       }
+      cover {
+        file {
+          url
+        }
+      }
+      description {
+        raw
+      }
     }
   }
 `;
