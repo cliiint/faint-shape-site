@@ -13,6 +13,7 @@ npm i && npm run develop
 ```
 
 ## TODO
-* hero & home page
-* footer
-* stylez
+* replace shows index with dynamic page, link to shows
+* show detail page
+* webhook for build on content update
+* update DNS, custom domain
