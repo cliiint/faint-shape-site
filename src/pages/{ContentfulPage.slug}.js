@@ -24,7 +24,7 @@ function Page(props) {
           const { slug, cover } = release;
           return (
             <Link to={`/music/${slug}`}>
-              <img style={{maxWidth: '400px'}} src={cover.file.url} alt={release.title} />
+              <img style={{maxWidth: '400px', width: '100%'}} src={cover.file.url} alt={release.title} />
             </Link>
           )
         } else {
@@ -36,7 +36,7 @@ function Page(props) {
 
   return (
     <Layout pageTitle={contentfulPage.title}>
-      <div>{renderRichText(contentfulPage.content, options)}</div>
+      {renderRichText(contentfulPage.content, options)}
     </Layout>
   )
 }
