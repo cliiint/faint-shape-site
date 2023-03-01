@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import 'react-h5-audio-player/lib/styles.css';
 
 function Page(props) {
   const { contentfulPage: contentfulPage } = props.data;
