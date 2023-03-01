@@ -25,6 +25,7 @@ body {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background: no-repeat center/cover url('../../images/fs_bg.jpg');
 }
 
 .heading {
