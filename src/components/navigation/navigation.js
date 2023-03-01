@@ -5,7 +5,7 @@ import { navLinks, navLinkItem, navLinkText } from './navigation.module.css'
 const Navigation = ({ children }) => {
   const query = useStaticQuery(graphql`
     query {
-      allContentfulPage {
+      allContentfulPage(filter: {slug: {ne: "home"}}) {
         edges {
           node {
             id
@@ -18,17 +18,18 @@ const Navigation = ({ children }) => {
   `);
 
   const pages = query.allContentfulPage.edges.map(edge => edge.node);
+  const underline = { borderBottom: 'solid 4px #ffffff' };
 
   return (
     <div>
       {children}
       <nav>
         <ul className={ navLinks }>
-          <li className={ navLinkItem }><Link className={ navLinkText } to="/">Home</Link></li>
-          <li className={ navLinkItem }><Link className={ navLinkText } to="/shows">Shows</Link></li>
+          <li className={ navLinkItem }><Link activeStyle={underline} className={ navLinkText } to="/">Home</Link></li>
+          <li className={ navLinkItem }><Link activeStyle={underline} className={ navLinkText } to="/shows">Shows</Link></li>
           {pages.map(page => {
             return (
-              <li className={ navLinkItem } key={page.id}><Link className={ navLinkText } to={`/${page.slug}`}>{page.title}</Link></li>
+              <li className={ navLinkItem } key={page.id}><Link activeStyle={underline} className={ navLinkText } to={`/${page.slug}`}>{page.title}</Link></li>
             )
           })}
         </ul>
