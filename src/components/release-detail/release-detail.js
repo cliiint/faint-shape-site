@@ -1,5 +1,6 @@
 import * as React from 'react'
 import AudioPlayer from 'react-h5-audio-player'
+import 'react-h5-audio-player/lib/styles.css'
 
 function ReleaseDetail({ release }) {
   const tracks = release.songs.map(song => Object.assign({}, { src: song.file.url }));
@@ -18,6 +19,7 @@ function ReleaseDetail({ release }) {
       <h1>{release.title}</h1>
       <div>welcome to relese view</div>
       <AudioPlayer
+        style={{color: 'black'}}
         src={tracks[currentTrack].src}
         showSkipControls
         onClickNext={handleClickNext}

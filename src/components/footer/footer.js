@@ -11,7 +11,7 @@ const Footer = () => {
         <li className={link}><a href="https://faintshape.bandcamp.com/" target="_blank"><FaBandcamp/></a></li>
         <li className={link}><a href="https://www.instagram.com/faint_shape/" target="_blank"><FaInstagram/></a></li>
         <li className={link}><a href="mailto:faintshape@gmail.com" target="_blank"><HiOutlineMail/></a></li>
-        <li className={link}>{new Date().getFullYear()}</li>
+        <li className={link} style={{opacity: '50%'}}>{new Date().getFullYear()}</li>
       </ul>
     </footer>
   )
