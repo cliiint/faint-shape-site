@@ -1,6 +1,10 @@
 .footer {
-  background-color: #000;
-  color: #fff;
   padding: 1rem;
   text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: end;
+  list-style: none;
 }

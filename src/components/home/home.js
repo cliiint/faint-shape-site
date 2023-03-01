@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <Layout hero={<Hero/>}>
-      <div>{renderRichText(home.content)}</div>
+      <div>{!!home.content && renderRichText(home.content)}</div>
     </Layout>
   )
 }
