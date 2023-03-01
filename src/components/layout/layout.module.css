@@ -19,13 +19,17 @@ body {
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 500px;
   font-family: sans-serif;
+  height: 100%;
+  background: no-repeat center/cover url('../../images/fs_bg.jpg');
+}
+
+.col {
+  margin: 0 auto;
+  max-width: 50rem;
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: no-repeat center/cover url('../../images/fs_bg.jpg');
 }
 
 .heading {
