@@ -17,3 +17,4 @@ npm i && npm run develop
 * show detail page
 * webhook for build on content update
 * update DNS, custom domain
+* feature to display upcoming shows on home page

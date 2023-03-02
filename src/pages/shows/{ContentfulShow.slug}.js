@@ -14,7 +14,6 @@ export const query = graphql`
   query($slug: String!) {
     contentfulShow( slug: { eq: $slug } ) {
       title
-      location
       date
     }
   }
