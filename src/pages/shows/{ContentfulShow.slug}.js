@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import ShowDetail from '../../components/show-detail/show-detail'
 
+
 function Show(props) {
   const { contentfulShow } = props.data;
 
@@ -15,6 +16,15 @@ export const query = graphql`
     contentfulShow( slug: { eq: $slug } ) {
       title
       date
+      description {
+        raw
+      }
+      image {
+        title
+        file {
+          url
+        }
+      }
     }
   }
 `;

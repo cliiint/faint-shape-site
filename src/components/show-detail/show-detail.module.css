@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex img {
+  max-width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+  }
+
+  .flex img {
+    max-width: 360px;
+    margin-right: 1rem;
+  }
+}
