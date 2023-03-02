@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout/layout'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { INLINES, MARKS } from '@contentful/rich-text-types'
+import { INLINES, MARKS, BLOCKS } from '@contentful/rich-text-types'
 
 function Page(props) {
   const { contentfulPage: contentfulPage } = props.data;
@@ -30,7 +30,16 @@ function Page(props) {
         } else {
           return <p>Warning: entry hyperlink type of <b>{node.data.target.__typename}</b> unsupported on Page</p>;
         }
-      }
+      },
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        if (node.data.target.__typename === 'ContentfulAsset') {
+          return (
+            <img style={{ maxWidth: '100%' }} src={node.data.target.file.url} alt={node.data.target.description} />
+          )
+        } else {
+          return <p>Warning: embedded asset type of <b>{node.data.target.__typename}</b> unsupported on Page</p>;
+        }
+      },
     }
   }
 
@@ -60,6 +69,15 @@ export const query = graphql`
               file {
                 url
               }
+            }
+          }
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+            title
+            description
+            file {
+              url
             }
           }
         }

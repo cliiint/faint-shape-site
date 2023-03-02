@@ -13,8 +13,6 @@ npm i && npm run develop
 ```
 
 ## TODO
-* replace shows index with dynamic page, link to shows
-* show detail page
 * webhook for build on content update
 * update DNS, custom domain
 * feature to display upcoming shows on home page
