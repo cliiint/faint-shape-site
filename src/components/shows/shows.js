@@ -60,8 +60,8 @@ const Shows = () => {
   return (
     <>
       <h1>Shows</h1>
-      {upcoming.length && showList(upcoming, 'Upcoming')}
-      {past.length && showList(upcoming, 'Past')}
+      {upcoming.length > 0 && showList(upcoming, 'Upcoming')}
+      {past.length > 0 && showList(past, 'Past')}
     </>
   )
 }
