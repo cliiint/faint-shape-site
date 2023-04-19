@@ -27,6 +27,7 @@ const Navigation = ({ children }) => {
         <ul className={ navLinks }>
           <li className={ navLinkItem }><Link activeStyle={underline} className={ navLinkText } to="/">Home</Link></li>
           <li className={ navLinkItem }><Link activeStyle={underline} className={ navLinkText } to="/shows">Shows</Link></li>
+          <li className={ navLinkItem }><Link activeStyle={underline} className={ navLinkText } to="/music">Music</Link></li>
           {pages.map(page => {
             return (
               <li className={ navLinkItem } key={page.id}><Link activeStyle={underline} className={ navLinkText } to={`/${page.slug}`}>{page.title}</Link></li>

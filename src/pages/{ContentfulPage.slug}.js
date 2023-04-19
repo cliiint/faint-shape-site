@@ -60,17 +60,6 @@ export const query = graphql`
       content {
         raw
         references {
-          ... on ContentfulRelease {
-            contentful_id
-            title
-            __typename
-            slug
-            cover {
-              file {
-                url
-              }
-            }
-          }
           ... on ContentfulAsset {
             contentful_id
             __typename
