@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { list, row, tickets, day, flex, boxOffice } from './shows.module.css'
+import { list, row, tickets, day, flex, boxOffice, pastShows } from './shows.module.css'
+import { useState } from 'react'
 
 const Shows = () => {
   const query = useStaticQuery(graphql`
@@ -34,6 +35,7 @@ const Shows = () => {
   const now = new Date();
   let past = [];
   let upcoming = [];
+  const [showPast, setShowPast] = useState(false);
 
   shows.forEach(show => {
     const endOfShowDay = new Date(show.date).setUTCHours(23,59,59,999);
@@ -46,6 +48,8 @@ const Shows = () => {
     let formatted = new Date(utc).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
     return formatted.substring(formatted.indexOf(',') + 2);
   };
+
+  const handleClick = () => setShowPast(!showPast);
 
   const showList = (events, heading) => {
     return (
@@ -75,7 +79,10 @@ const Shows = () => {
     <>
       <h1>Shows</h1>
       {upcoming.length > 0 && showList(upcoming, 'Upcoming')}
-      {past.length > 0 && showList(past.reverse(), 'Past')}
+      <p className={pastShows} onClick={handleClick}>
+        {showPast ? 'Hide past shows' : 'See past shows'}
+      </p>
+      {past.length > 0 && showPast && showList(past.reverse(), 'Past')}
     </>
   )
 }

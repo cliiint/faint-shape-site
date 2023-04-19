@@ -48,3 +48,8 @@
 .boxOffice {
   opacity: 0.5;
 }
+
+.pastShows {
+  text-decoration: underline;
+  cursor: pointer;
+}
