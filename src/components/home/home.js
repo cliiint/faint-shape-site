@@ -19,7 +19,8 @@ const Home = () => {
   const home = query.contentfulPage;
 
   return (
-    <Layout hero={<Hero/>}>
+    <Layout>
+      <Hero/>
       <div>{!!home.content && renderRichText(home.content)}</div>
     </Layout>
   )
