@@ -1,9 +1,6 @@
-.list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
-  padding: 0;
+.list > div:not(:last-child) {
+  border-bottom: solid 1px #ffffff;
+  margin-bottom: 1rem;
 }
 
 .list img {
@@ -14,4 +11,45 @@
   .list {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+.date {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.day p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex a,
+.flex p {
+  margin: 0 1rem;
+}
+
+.tickets {
+  width: 100px;
+  text-align: center;
+}
+
+.boxOffice {
+  opacity: 0.5;
+}
+
+.pastShows {
+  text-decoration: underline;
+  cursor: pointer;
 }
