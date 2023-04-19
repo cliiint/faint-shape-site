@@ -16,7 +16,7 @@ const Shows = () => {
             description {
               raw
             }
-            date(formatString: "MMM Do, YYYY")
+            date
             image {
               title
               file {
@@ -42,6 +42,10 @@ const Shows = () => {
 
   const ticketsUrl = (show) => <a className={`${tickets} button`} href={show.ticketsUrl} target="_blank">Tickets</a>;
   const box = <p className={`${tickets} ${boxOffice}`}>Box Office</p>;
+  const date = (utc) => {
+    let formatted = new Date(utc).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+    return formatted.substring(formatted.indexOf(',') + 2);
+  };
 
   const showList = (events, heading) => {
     return (
@@ -52,7 +56,7 @@ const Shows = () => {
             return (
               <div className={row} key={show.id}>
                 <div className={day}>
-                  <p>{show.date}</p>
+                  <p>{date(show.date)}</p>
                   <p>{show.location}</p>
                 </div>
                 <div className={flex}>
@@ -71,7 +75,7 @@ const Shows = () => {
     <>
       <h1>Shows</h1>
       {upcoming.length > 0 && showList(upcoming, 'Upcoming')}
-      {past.length > 0 && showList(past, 'Past')}
+      {past.length > 0 && showList(past.reverse(), 'Past')}
     </>
   )
 }
