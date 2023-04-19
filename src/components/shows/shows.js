@@ -1,20 +1,22 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { list } from './shows.module.css'
+import { list, row, tickets, day, flex, boxOffice } from './shows.module.css'
 
 const Shows = () => {
   const query = useStaticQuery(graphql`
     query {
-      allContentfulShow(sort: {date: DESC}) {
+      allContentfulShow(sort: {date: ASC}) {
         edges {
           node {
             id
             title
             slug
+            location
+            ticketsUrl
             description {
               raw
             }
-            date
+            date(formatString: "MMM Do, YYYY")
             image {
               title
               file {
@@ -38,21 +40,29 @@ const Shows = () => {
     endOfShowDay > now ? upcoming.push(show) : past.push(show);
   });
 
+  const ticketsUrl = (show) => <a className={`${tickets} button`} href={show.ticketsUrl} target="_blank">Tickets</a>;
+  const box = <p className={`${tickets} ${boxOffice}`}>Box Office</p>;
+
   const showList = (events, heading) => {
     return (
       <>
         <h2>{heading}</h2>
-        <ul className={list}>
+        <div className={list}>
           {events.map(show => {
             return (
-              <li key={show.id}>
-                <Link to={`/shows/${show.slug}`}>
-                  <img src={show.image.file.url} alt={show.image.title}/>
-                </Link>
-              </li>
+              <div className={row} key={show.id}>
+                <div className={day}>
+                  <p>{show.date}</p>
+                  <p>{show.location}</p>
+                </div>
+                <div className={flex}>
+                  <Link to={`/shows/${show.slug}`}>Details</Link>
+                  {show.ticketsUrl ? ticketsUrl(show) : box}
+                </div>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </>
     )
   };
