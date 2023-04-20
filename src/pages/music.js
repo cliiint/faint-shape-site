@@ -28,7 +28,7 @@ const Music = () => {
   console.log(releases)
 
   return (
-    <Layout>
+    <Layout pageTitle="Music">
       <div className={grid}>
         {releases.map(release => {
           return (

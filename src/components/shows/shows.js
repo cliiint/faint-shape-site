@@ -77,7 +77,6 @@ const Shows = () => {
 
   return (
     <>
-      <h1>Shows</h1>
       {upcoming.length > 0 && showList(upcoming, 'Upcoming')}
       <p className={pastShows} onClick={handleClick}>
         {showPast ? 'Hide past shows' : 'See past shows'}

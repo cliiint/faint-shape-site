@@ -26,7 +26,6 @@ function ReleaseDetail({ release }) {
 
   return (
     <>
-      <h1>{release.title}</h1>
       <div className={coverPlayer}>
         <img src={release.cover.file.url}></img>
         <div className={content}>

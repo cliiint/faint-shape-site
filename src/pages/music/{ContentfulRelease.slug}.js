@@ -7,7 +7,7 @@ function Release(props) {
   const { contentfulRelease } = props.data;
 
   return (
-    <Layout>
+    <Layout pageTitle={contentfulRelease.title}>
       <ReleaseDetail release={contentfulRelease} />
     </Layout>
   )

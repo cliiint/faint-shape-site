@@ -36,3 +36,7 @@ body {
 .heading {
   color: rebeccapurple;
 }
+
+.rule {
+  margin-bottom: 2rem;
+}
