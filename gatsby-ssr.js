@@ -9,6 +9,11 @@ export const onRenderBody = ({ setHeadComponents }) => {
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
+    />,
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/icon.png"
     />
   ]);
 };
