@@ -1,6 +1,6 @@
 .links {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   list-style: none;
   margin: 2rem 0;
 }
