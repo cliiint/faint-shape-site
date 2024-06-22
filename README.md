@@ -13,6 +13,5 @@ npm i && npm run develop
 ```
 
 ## TODO
-* webhook for build on content update
 * update DNS, custom domain
 * feature to display upcoming shows on home page
