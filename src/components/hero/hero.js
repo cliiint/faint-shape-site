@@ -14,7 +14,7 @@ const Hero = () => {
 
       <div>
         <p>
-          <a href="https://faintshape.bandcamp.com/album/faint-shape" target="_blank">RECORD</a> OUT JUN 29
+          <a href="https://faintshape.bandcamp.com/album/faint-shape" target="_blank">RECORD</a> OUT NOW
         </p>
       </div>
     </div>
