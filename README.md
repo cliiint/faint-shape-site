@@ -13,5 +13,5 @@ npm i && npm run develop
 ```
 
 ## TODO
-* update DNS, custom domain
-* feature to display upcoming shows on home page
+* display upcoming shows on home page
+* next/previous on show detail page
