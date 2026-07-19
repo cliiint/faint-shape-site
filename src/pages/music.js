@@ -25,7 +25,6 @@ const Music = () => {
   `);
 
   const releases = query.allContentfulRelease.edges.map(edge => edge.node);
-  console.log(releases)
 
   return (
     <Layout pageTitle="Music">

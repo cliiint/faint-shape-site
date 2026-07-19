@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 function ShowCatchAll({ params }) {
-  console.log('params on catchall ',params)
   return (
     <div className="wrapper">
       <header>
