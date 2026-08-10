@@ -14,11 +14,49 @@ const Navigation = ({ children }) => {
           }
         }
       }
+      allContentfulShow(sort: {date: DESC}, limit: 1) {
+        edges {
+          node {
+            id
+            title
+            slug
+            location
+            ticketsUrl
+            description {
+              raw
+            }
+            date
+            image {
+              title
+              file {
+                fileName
+                url
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
   const pages = query.allContentfulPage.edges.map(edge => edge.node);
   const underline = { borderBottom: 'solid 4px #ffffff' };
+
+  const now = new Date();
+  const shows = query.allContentfulShow.edges.map(edge => edge.node);
+  const nextShow = shows.find(show => new Date(show.date).setUTCHours(23,59,59,999) > now);
+
+  const nextShowTemplate = () => {
+    if (nextShow) {
+      return (
+        <li className={ navLinkItem }>
+          <Link className={ navLinkText } to={`/shows/${nextShow.slug}`}>{nextShow.date}</Link>
+        </li>
+      );
+    } else {
+      return null;
+    }
+  }
 
   return (
     <div>
@@ -33,6 +71,7 @@ const Navigation = ({ children }) => {
               <li className={ navLinkItem } key={page.id}><Link activeStyle={underline} className={ navLinkText } to={`/${page.slug}`}>{page.title}</Link></li>
             )
           })}
+          { nextShowTemplate() }
         </ul>
       </nav>
     </div>
