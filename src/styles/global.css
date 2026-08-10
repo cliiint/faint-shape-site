@@ -19,7 +19,8 @@ h5,
 h6,
 p,
 a,
-li
+li,
+small
  {
   font-family: 'RobotoMono', sans-serif;
   color: white;
