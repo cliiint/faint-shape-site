@@ -17,3 +17,13 @@
 .nav-link-text.active {
   text-decoration: underline;
 }
+
+.next-show-container {
+  margin-top: 3rem;
+  border: 1 solid white;
+  position: absolute;
+}
+
+.show-link-item {
+  text-decoration: none;
+}

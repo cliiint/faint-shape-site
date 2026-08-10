@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { navLinks, navLinkItem, navLinkText } from './navigation.module.css'
+import { navLinks, navLinkItem, navLinkText, showLinkItem, nextShowContainer } from './navigation.module.css'
 
 const Navigation = ({ children }) => {
   const query = useStaticQuery(graphql`
@@ -54,12 +54,12 @@ const Navigation = ({ children }) => {
       };
 
       const dateObject = new Date(nextShow.date);
-      const formatted = new Intl.DateTimeFormat("en-US", options).format(dateObject);
+      const formattedDate = new Intl.DateTimeFormat("en-US", options).format(dateObject);
 
       return (
-        <li className={ navLinkItem }>
-          <Link className={ navLinkText } to={`/shows/${nextShow.slug}`}>{formatted}</Link>
-        </li>
+        <div className={ nextShowContainer }>
+          <Link className={ showLinkItem } to={`/shows/${nextShow.slug}`}>{'👻 ' + formattedDate + ' ' + nextShow.location + ' 👻'}</Link>
+        </div>
       );
     } else {
       return null;
