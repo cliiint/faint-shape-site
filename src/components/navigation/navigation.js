@@ -48,9 +48,17 @@ const Navigation = ({ children }) => {
 
   const nextShowTemplate = () => {
     if (nextShow) {
+      const options = {
+        month: 'short',
+        day: 'numeric',
+      };
+
+      const dateObject = new Date(nextShow.date);
+      const formatted = new Intl.DateTimeFormat("en-US", options).format(dateObject);
+
       return (
         <li className={ navLinkItem }>
-          <Link className={ navLinkText } to={`/shows/${nextShow.slug}`}>{nextShow.date}</Link>
+          <Link className={ navLinkText } to={`/shows/${nextShow.slug}`}>{formatted}</Link>
         </li>
       );
     } else {
