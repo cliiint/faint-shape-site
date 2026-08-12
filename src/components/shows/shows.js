@@ -43,7 +43,7 @@ const Shows = () => {
   });
 
   const ticketsUrl = (show) => <a className={`${tickets} button`} href={show.ticketsUrl} target="_blank">Tickets</a>;
-  const box = <p className={`${tickets} ${boxOffice}`}>Box Office</p>;
+  const noPresale = <p className={`${tickets} ${boxOffice}`}>No presale</p>;
   const date = (utc) => {
     let formatted = new Date(utc).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
     return formatted.substring(formatted.indexOf(',') + 2);
@@ -65,7 +65,7 @@ const Shows = () => {
                 </div>
                 <div className={flex}>
                   <Link to={`/shows/${show.slug}`}>Details</Link>
-                  {show.ticketsUrl ? ticketsUrl(show) : box}
+                  {show.ticketsUrl ? ticketsUrl(show) : noPresale}
                 </div>
               </div>
             );
