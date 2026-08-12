@@ -11,6 +11,17 @@
   width: 100%;
 }
 
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
 @media screen and (min-width: 768px) {
   .flex {
     flex-direction: row;
