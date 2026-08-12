@@ -40,3 +40,7 @@ body {
 .rule {
   margin-bottom: 2rem;
 }
+
+h1 {
+  margin-top: 0;
+}
