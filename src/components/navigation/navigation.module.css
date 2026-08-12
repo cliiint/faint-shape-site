@@ -20,10 +20,34 @@
 
 .next-show-container {
   margin-top: 3rem;
-  border: 1 solid white;
   position: absolute;
 }
 
 .show-link-item {
   text-decoration: none;
+  
+}
+
+.show-link-item:hover {
+  padding-bottom: 8px;
+  border-bottom: 4px solid hotpink;
+}
+
+.show-ghost {
+  opacity: 1;
+  animation: fade 2s infinite;
+}
+
+.show-ghost:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
