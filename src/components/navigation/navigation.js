@@ -14,7 +14,7 @@ const Navigation = ({ children }) => {
           }
         }
       }
-      allContentfulShow(sort: {date: DESC}, limit: 1) {
+      allContentfulShow(sort: {date: DESC}) {
         edges {
           node {
             id
