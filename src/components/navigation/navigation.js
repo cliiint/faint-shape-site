@@ -81,8 +81,8 @@ const Navigation = ({ children }) => {
               <li className={ navLinkItem } key={page.id}><Link activeStyle={underline} className={ navLinkText } to={`/${page.slug}`}>{page.title}</Link></li>
             )
           })}
-          { nextShowTemplate() }
         </ul>
+        { nextShowTemplate() }
       </nav>
     </div>
   )
