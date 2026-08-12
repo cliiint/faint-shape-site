@@ -13,5 +13,4 @@ npm i && npm run develop
 ```
 
 ## TODO
-* display upcoming shows on home page
 * next/previous on show detail page

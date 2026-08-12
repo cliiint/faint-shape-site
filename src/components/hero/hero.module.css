@@ -14,12 +14,6 @@
   max-height: 100%;
 }
 
-.heroMarquee {
-  transform: rotate(3deg);
-  margin-top: 2rem;
-  width: 90%;
-}
-
 .hero div {
   transform: rotate(3deg);
   margin-top: 2rem;

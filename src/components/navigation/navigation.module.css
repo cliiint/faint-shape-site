@@ -3,6 +3,7 @@
   justify-content: center;
   list-style: none;
   padding: 1rem 0 1rem 0;
+  position: relative;
 }
 
 .nav-links > li:not(:last-child) {
@@ -16,4 +17,44 @@
 
 .nav-link-text.active {
   text-decoration: underline;
+}
+
+.next-show-container {
+  text-align: center;
+  margin-top: 3rem;
+  position: absolute;
+}
+
+.next-show-container small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.show-link-item {
+  text-decoration: none;
+
+}
+
+.show-link-item:hover {
+  padding-bottom: 8px;
+  border-bottom: 4px solid hotpink;
+}
+
+.show-ghost {
+  opacity: 1;
+  animation: fade 2s infinite;
+}
+
+.show-ghost:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
