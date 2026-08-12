@@ -2,11 +2,15 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import ShowDetail from '../../components/show-detail/show-detail'
 
-
 function Show(props) {
-  const { contentfulShow } = props.data;
+  const { contentfulShow, allContentfulShow } = props.data;
+  const shows = allContentfulShow.nodes;
+  const currentIndex = shows.findIndex((show) => show.slug === contentfulShow.slug);
 
-  return <ShowDetail show={contentfulShow} />
+  const prevShow = currentIndex > 0 ? shows[currentIndex - 1] : null;
+  const nextShow = currentIndex < shows.length - 1 ? shows[currentIndex + 1] : null;
+
+  return <ShowDetail show={contentfulShow} prevShow={prevShow} nextShow={nextShow} />
 }
 
 export default Show
@@ -14,6 +18,7 @@ export default Show
 export const query = graphql`
   query($slug: String!) {
     contentfulShow( slug: { eq: $slug } ) {
+      slug
       title
       date
       description {
@@ -24,6 +29,13 @@ export const query = graphql`
         file {
           url
         }
+      }
+    }
+    allContentfulShow(sort: { date: ASC }) {
+      nodes {
+        slug
+        title
+        date
       }
     }
   }
