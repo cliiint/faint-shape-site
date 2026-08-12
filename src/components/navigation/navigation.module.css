@@ -28,31 +28,34 @@
   text-transform: uppercase;
 }
 
-.show-link-item {
-  text-decoration: none;
-
-}
-
-.show-link-item:hover {
-  padding-bottom: 8px;
-  border-bottom: 4px solid hotpink;
-}
-
 .show-ghost {
+  display: inline-block;
   opacity: 1;
-  animation: fade 2s infinite;
+  transform-origin: center;
+  animation: tremolo 9s infinite, vibrato 5s infinite;
+  margin: 0 1rem;
 }
 
 .show-ghost:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: 1.5s, 2s;
 }
 
-@keyframes fade {
+@keyframes tremolo {
   0%, 100% {
     opacity: 0;
   }
 
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes vibrato {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
   }
 }
