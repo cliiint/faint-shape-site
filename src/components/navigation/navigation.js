@@ -58,6 +58,8 @@ const Navigation = ({ children }) => {
 
       return (
         <div className={ nextShowContainer }>
+          <small>Alert:</small>
+          <br/>
           <Link className={ showLinkItem } to={`/shows/${nextShow.slug}`}><span className={showGhost}>👻</span> {formattedDate + ' ' + nextShow.location} <span className={showGhost}>👻</span></Link>
         </div>
       );

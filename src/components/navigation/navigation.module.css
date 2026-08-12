@@ -3,6 +3,7 @@
   justify-content: center;
   list-style: none;
   padding: 1rem 0 1rem 0;
+  position: relative;
 }
 
 .nav-links > li:not(:last-child) {
@@ -19,13 +20,19 @@
 }
 
 .next-show-container {
+  text-align: center;
   margin-top: 3rem;
   position: absolute;
 }
 
+.next-show-container small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
 .show-link-item {
   text-decoration: none;
-  
+
 }
 
 .show-link-item:hover {
