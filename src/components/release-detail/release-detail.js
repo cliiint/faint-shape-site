@@ -5,7 +5,7 @@ import { coverPlayer, content, buttonContainer } from './release-detail.module.c
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 function ReleaseDetail({ release }) {
-  const tracks = release.songs.map(song => Object.assign({}, { src: song.file.url, name: song.file.fileName }));
+  const tracks = release.songs.map(song => Object.assign({}, { src: song.file.url, name: song.title }));
   const [currentTrack, setTrackIndex] = React.useState(0);
 
   const handleClickNext = () => {
@@ -28,10 +28,6 @@ function ReleaseDetail({ release }) {
     </div>
   }
 
-  const formatTrackName = (fileName) => {
-    return fileName.split('.')[0];
-  }
-
   return (
     <>
       <div className={coverPlayer}>
@@ -46,7 +42,7 @@ function ReleaseDetail({ release }) {
             onClickNext={handleClickNext}
             onClickPrevious={handleClickPrevious}
             onEnded={handleEnd}
-            header=<p style={{textAlign: 'center', color: 'black'}}>{formatTrackName(tracks[currentTrack].name)}</p>
+            header=<p style={{textAlign: 'center', color: 'black'}}>{(tracks[currentTrack].name)}</p>
           />
         </div>
       </div>

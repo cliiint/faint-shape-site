@@ -20,6 +20,7 @@ export const query = graphql`
     contentfulRelease( slug: { eq: $slug } ) {
       title
       songs {
+        title
         file {
           url
           fileName
