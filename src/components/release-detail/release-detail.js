@@ -11,6 +11,10 @@ function ReleaseDetail({ release }) {
   const handleClickNext = () => {
     setTrackIndex((currentTrack) => currentTrack < tracks.length - 1 ? currentTrack + 1 : 0);
   };
+
+  const handleClickPrevious = () => {
+    setTrackIndex((currentTrack) => currentTrack > 0 ? currentTrack - 1 : 0);
+  }
   
   const handleEnd = () => {
     setTrackIndex((currentTrack) => currentTrack < tracks.length - 1 ? currentTrack + 1 : 0);
@@ -36,6 +40,7 @@ function ReleaseDetail({ release }) {
             src={tracks[currentTrack].src}
             showSkipControls
             onClickNext={handleClickNext}
+            onClickPrevious={handleClickPrevious}
             onEnded={handleEnd}
             header=<p style={{textAlign: 'center', color: 'black'}}>{tracks[currentTrack].name}</p>
           />
