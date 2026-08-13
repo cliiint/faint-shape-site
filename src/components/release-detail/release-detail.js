@@ -28,6 +28,10 @@ function ReleaseDetail({ release }) {
     </div>
   }
 
+  const formatTrackName = (fileName) => {
+    return fileName.split('.')[0];
+  }
+
   return (
     <>
       <div className={coverPlayer}>
@@ -42,7 +46,7 @@ function ReleaseDetail({ release }) {
             onClickNext={handleClickNext}
             onClickPrevious={handleClickPrevious}
             onEnded={handleEnd}
-            header=<p style={{textAlign: 'center', color: 'black'}}>{tracks[currentTrack].name}</p>
+            header=<p style={{textAlign: 'center', color: 'black'}}>{formatTrackName(tracks[currentTrack].name)}</p>
           />
         </div>
       </div>
