@@ -37,6 +37,7 @@ function ReleaseDetail({ release }) {
             showSkipControls
             onClickNext={handleClickNext}
             onEnded={handleEnd}
+            header=<p style={{textAlign: 'center', color: 'black'}}>hello</p>
           />
         </div>
       </div>
