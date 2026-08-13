@@ -5,12 +5,16 @@ import { coverPlayer, content, buttonContainer } from './release-detail.module.c
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 function ReleaseDetail({ release }) {
-  const tracks = release.songs.map(song => Object.assign({}, { src: song.file.url }));
+  const tracks = release.songs.map(song => Object.assign({}, { src: song.file.url, name: song.file.fileName }));
   const [currentTrack, setTrackIndex] = React.useState(0);
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) => currentTrack < tracks.length - 1 ? currentTrack + 1 : 0);
   };
+
+  const handleClickPrevious = () => {
+    setTrackIndex((currentTrack) => currentTrack > 0 ? currentTrack - 1 : 0);
+  }
   
   const handleEnd = () => {
     setTrackIndex((currentTrack) => currentTrack < tracks.length - 1 ? currentTrack + 1 : 0);
@@ -22,6 +26,10 @@ function ReleaseDetail({ release }) {
     return <div className={buttonContainer}>
       <a className={`button`} href={release.purchaseUrl} target="_blank">Buy</a>
     </div>
+  }
+
+  const formatTrackName = (fileName) => {
+    return fileName.split('.')[0];
   }
 
   return (
@@ -36,7 +44,9 @@ function ReleaseDetail({ release }) {
             src={tracks[currentTrack].src}
             showSkipControls
             onClickNext={handleClickNext}
+            onClickPrevious={handleClickPrevious}
             onEnded={handleEnd}
+            header=<p style={{textAlign: 'center', color: 'black'}}>{formatTrackName(tracks[currentTrack].name)}</p>
           />
         </div>
       </div>

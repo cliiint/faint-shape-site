@@ -13,5 +13,4 @@ npm i && npm run develop
 ```
 
 ## TODO
-* display currently playing track on release pages
-* next/previous on show detail page
+???
