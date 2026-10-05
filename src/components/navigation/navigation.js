@@ -44,15 +44,19 @@ const Navigation = ({ children }) => {
 
   const now = new Date();
   const shows = query.allContentfulShow.edges.map(edge => edge.node);
-  const nextShow = shows.find(show => new Date(show.date).setUTCHours(23,59,59,999) > now);
+
+  const upcomingShows = shows
+    .filter(show => new Date(show.date).setUTCHours(23,59,59,999) > now)
+    .reverse();
 
   const nextShowTemplate = () => {
-    if (nextShow) {
+    if (upcomingShows.length > 0) {
       const options = {
         month: 'short',
         day: 'numeric',
       };
 
+      const nextShow = upcomingShows[0];
       const dateObject = new Date(nextShow.date);
       const formattedDate = new Intl.DateTimeFormat("en-US", options).format(dateObject);
 
