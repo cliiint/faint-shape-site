@@ -30,7 +30,7 @@
 
 .show-ghost {
   display: inline-block;
-  opacity: 1;
+  opacity: 0;
   transform-origin: center;
   animation: tremolo 9s infinite, vibrato 5s infinite;
   margin: 0 1rem;
@@ -56,6 +56,6 @@
   }
 
   50% {
-    transform: scale(1.5);
+    transform: scale(1.75);
   }
 }
