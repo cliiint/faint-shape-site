@@ -46,7 +46,7 @@ const Navigation = ({ children }) => {
   const shows = query.allContentfulShow.edges.map(edge => edge.node);
 
   const upcomingShows = shows
-    .filter(show => new Date(show.date).setUTCHours(23,59,59,999) > now)
+    .filter(show => new Date(show.date).setHours(23,59,59,999) > now)
     .reverse();
 
   const nextShowTemplate = () => {
